@@ -1,11 +1,16 @@
 package client
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestClientConnection(t *testing.T) {
 
-	conn := true
-	if !conn {
+	rpcUrl := "http://127.0.0.1:7545"
+
+	client, ctx := connect(rpcUrl)
+	chainID, _ := client.ChainID(ctx)
+	if chainID == nil {
 		t.Error("Connection Failed")
 	}
 }
