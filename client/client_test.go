@@ -2,7 +2,6 @@ package client
 
 import (
 	"context"
-	"fmt"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"log"
@@ -11,22 +10,22 @@ import (
 
 func TestSend(t *testing.T) {
 
-	fmt.Println("Hello")
-
 	client, ctx := getClientConnection(t)
-	privateKey, err := crypto.HexToECDSA("2dd5ee8e6cd77d432f803612b819dbb0e0447ff98a5d27996b6ce7e60dc09d3b")
+	privateKey, err := crypto.HexToECDSA("dc52646c3b180710fee14723f72197d94344db31790f085398d2cf61e29a8102")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	send(client, ctx, privateKey, 10)
+	Send(client, ctx, privateKey, "0x0c7338Bf194fb0ea44afFe608974288EE55E869C", 10)
+
+	// Send Back
 
 }
 
 func getClientConnection(t *testing.T) (*ethclient.Client, context.Context) {
 	rpcUrl := "http://127.0.0.1:7545"
 
-	client, ctx := connect(rpcUrl)
+	client, ctx := Connect(rpcUrl)
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
 		t.Error("Connection Failed")
