@@ -5,6 +5,7 @@ import (
 	_ "github.com/ebadiere/wallet/client"
 	walletClient "github.com/ebadiere/wallet/client"
 	kyber "github.com/ebadiere/wallet/contracts"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	_ "github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	_ "github.com/ethereum/go-ethereum/ethclient"
@@ -14,10 +15,15 @@ import (
 	"os"
 )
 
-func TokenToToken(rpcUrl string,
-	sourceToken string,
-	amount float64,
-	destToken string) (*big.Float, *big.Float) {
+type rate struct {
+	ExpectedRate *big.Int
+	SlippageRate *big.Int
+}
+
+func TokenToTokenRate(rpcUrl string, sourceToken string, amount float64, destToken string) (struct {
+	ExpectedRate *big.Int
+	SlippageRate *big.Int
+}, error) {
 
 	err := godotenv.Load()
 	if err != nil {
@@ -27,7 +33,7 @@ func TokenToToken(rpcUrl string,
 	client, ctx := walletClient.Connect(rpcUrl)
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
-		t.Error("Connection Failed")
+		log.Fatal("Connection Failed")
 	}
 
 	kyberAddress := common.HexToAddress(os.Getenv("kyberNetworkProxyAddress"))
@@ -37,7 +43,15 @@ func TokenToToken(rpcUrl string,
 		log.Fatal(err)
 	}
 
+	amountBigIn := walletClient.FloatToBigInt(amount)
 	// Call Get ExpectedRate here
-	return kyberProxy.GetExpectedRate(common.HexToAddress(sourceToken), common.HexToAddress(destToken), walletClient.FloatToBigInt(amount)), nil
 
+	auth := bind.CallOpts{
+		Pending:     false,
+		From:        common.Address{},
+		BlockNumber: nil,
+		Context:     nil,
+	}
+
+	return kyberProxy.GetExpectedRate(&auth, common.HexToAddress(sourceToken), common.HexToAddress(destToken), amountBigIn)
 }

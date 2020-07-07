@@ -2,6 +2,7 @@ package kyber
 
 import (
 	"fmt"
+	//"fmt"
 	walletClient "github.com/ebadiere/wallet/client"
 	_ "github.com/ethereum/go-ethereum/ethclient"
 	"github.com/joho/godotenv"
@@ -30,7 +31,11 @@ func TestTokenToToken(t *testing.T) {
 		t.Error("Connection Failed")
 	}
 
-	res := TokenToToken(rpcUrl, "0x6B175474E89094C44Da98b954EedeAC495271d0F", 10000, "0xdd974D5C2e2928deA5F71b9825b8b646686BD200")
-	fmt.Println(res)
-	fmt.Println("rpcUrl: ", rpcUrl)
+	rate, err := TokenToTokenRate(rpcUrl, "0x6B175474E89094C44Da98b954EedeAC495271d0F", 10000, "0xdd974D5C2e2928deA5F71b9825b8b646686BD200")
+	if chainID == nil {
+		t.Error("Connection Failed")
+	}
+
+	fmt.Println("Expected Rate: ", rate.ExpectedRate)
+	fmt.Println("Slippage: ", rate.SlippageRate)
 }
