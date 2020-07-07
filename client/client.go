@@ -46,9 +46,9 @@ func Send(client *ethclient.Client,
 		log.Fatal(err)
 	}
 
-	value := floatToBigInt(amount)
+	value := FloatToBigInt(amount)
 	gasLimit := uint64(21000) // in units
-	//gasPrice := big.NewInt(30000000000) // in wei (30 gwei)
+
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -76,7 +76,7 @@ func Send(client *ethclient.Client,
 
 }
 
-func floatToBigInt(val float64) *big.Int {
+func FloatToBigInt(val float64) *big.Int {
 	bigval := new(big.Float)
 	bigval.SetFloat64(val)
 
