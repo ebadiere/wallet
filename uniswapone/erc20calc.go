@@ -1,8 +1,15 @@
 package uniswapone
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
+	walletClient "github.com/ebadiere/wallet/client"
+	"github.com/ebadiere/wallet/contracts/token/ERC20"
+	_ "github.com/ebadiere/wallet/contracts/token/ERC20"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/joho/godotenv"
 	"io/ioutil"
 	"log"
@@ -17,7 +24,7 @@ type Exchange struct {
 	TakerFee string `json:"taker_fee"`
 }
 
-func LoadResponse() {
+func LoadResponse() map[string]Exchange {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal(err)
@@ -37,16 +44,47 @@ func LoadResponse() {
 	exchanges := make(map[string]Exchange)
 	json.Unmarshal([]byte(byteValue), &exchanges)
 
-	count := 0
-	for k, v := range exchanges {
-		count++
-		fmt.Println("token address:", k)
-		fmt.Println("token Name:", v.Name)
-		fmt.Println("token Symbol:", v.Symbol)
-		fmt.Println("Exchange Address :", v.Id)
-		fmt.Println("maker fee:", v.MakerFee)
-		fmt.Println("taker fee:", v.TakerFee)
-		fmt.Println("Exchange count: ", count)
+	return exchanges
+}
 
+func CalculateEthToTokenTrade(client *ethclient.Client,
+	ctx context.Context,
+	ethAmount float64,
+	tokenExchange string,
+	tokenAddr string) {
+
+	amount := walletClient.FloatToBigInt(ethAmount)
+	//exchangeAddress := common.HexToAddress(tokenExchange)
+
+	ethReserveBal, err := client.BalanceAt(ctx, common.HexToAddress(tokenExchange), nil)
+	if err != nil {
+		log.Fatal(err)
 	}
+
+	erc20, err := ERC20.NewERC20(common.HexToAddress(tokenAddr), client)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	auth := bind.CallOpts{
+		Pending:     false,
+		From:        common.Address{},
+		BlockNumber: nil,
+		Context:     nil,
+	}
+
+	tokenReserveBal, err := erc20.BalanceOf(&auth, common.HexToAddress(tokenExchange))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//tokenReserveBal, err := client.BalanceAt(ctx, common.HexToAddress(tokenExchange), nil)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+
+	fmt.Println("Amount: ", amount)
+	fmt.Println("Eth reserve Amount: ", ethReserveBal)
+	fmt.Println("Token reserve Amount: ", tokenReserveBal)
+	//inputReserve := use client here
 }
