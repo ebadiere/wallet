@@ -1,22 +1,8 @@
 {
-  "ETH": {
-    "name": "Ether",
-    "symbol": "ETH",
-    "id": "ETH",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39": {
     "name": "HEX",
     "symbol": "HEX",
     "id": "0x05cDe89cCfa0adA8C88D5A23caaa79Ef129E7883",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
-    "name": "USD//C",
-    "symbol": "USDC",
-    "id": "0x97deC872013f6B5fB443861090ad931542878126",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -52,13 +38,6 @@
     "name": "Pinakion",
     "symbol": "PNK",
     "id": "0xF506828B166de88cA2EDb2A98D960aBba0D2402A",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": {
-    "name": "Wrapped Ether",
-    "symbol": "WETH",
-    "id": "0xA2881A90Bf33F03E7a3f803765Cd2ED5c8928dFb",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -216,27 +195,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x22C8ECF727C23422f47093b562EC53c139805301": {
-    "name": "RealToken 16200 Fullerton Ave Detroit MI",
-    "symbol": "REALTOKEN-16200-FULLERTON-AVE-DETROIT-MI",
-    "id": "0xc215EbFE68C15FCAFCb848105eF5f5B1158313CB",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x5807CA447851C98569c567963B25B1C83D41BeBc": {
-    "name": "RealToken 10024-10028 Appoline Street Detroit MI",
-    "symbol": "REALTOKEN-10024-10028-APPOLINE-ST-DETROIT-MI",
-    "id": "0x0620e472EA092aDAfFd70E928d706b4A53aDF6c8",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413": {
-    "name": "TheDAO",
-    "symbol": "TheDAO",
-    "id": "0xC7C60e9419466939E968db2A88Fe64EC41908Bb4",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F": {
     "name": "Synthetix Network Token",
     "symbol": "SNX",
@@ -262,13 +220,6 @@
     "name": "Digital Rand",
     "symbol": "DZAR",
     "id": "0x80324Ec8d64425B37f8603A97097dA7D493dbc79",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x6Fd016CCc4611F7BAB1DD3267334cB0216Ef47f9": {
-    "name": "RealToken 8342 Schaefer Hwy Detroit MI",
-    "symbol": "REALTOKEN-8342-SCHAEFER-HWY-DETROIT-MI",
-    "id": "0x2E66ED26258C186e931a7dd2AedbF944c9a0d2FF",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -314,13 +265,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xeD42CeDcADbFbCAA3E6F411B09567C2C0b5AD28F": {
-    "name": "RealToken 9336 Patton Street Detroit MI",
-    "symbol": "REALTOKEN-9336-PATTON-ST-DETROIT-MI",
-    "id": "0x9016aA99b98128ba990097eA3F3D60b5e40775e4",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xdd974D5C2e2928deA5F71b9825b8b646686BD200": {
     "name": "Kyber Network Crystal",
     "symbol": "KNC",
@@ -342,13 +286,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x395C47a421C254AE42253764A7f56e0Ee0CDDac5": {
-    "name": "RealToken 20200 Lesure Street Detroit MI",
-    "symbol": "REALTOKEN-20200-LESURE-ST-DETROIT-MI",
-    "id": "0x1Bdc18d53CA882B97196828E131548700ea81a88",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x408e41876cCCDC0F92210600ef50372656052a38": {
     "name": "Republic Token",
     "symbol": "REN",
@@ -360,13 +297,6 @@
     "name": "Aave Interest bearing DAI",
     "symbol": "aDAI",
     "id": "0x7cfab87AaC0899c093235b342AC0e5B1ACF159EB",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xE5f7ef61443Fc36AE040650aa585B0395AEf77c8": {
-    "name": "RealToken 9943 Marlowe Street Detroit MI",
-    "symbol": "REALTOKEN-9943-MARLOWE-ST-DETROIT-MI",
-    "id": "0x474F8F008f07cD42200BC6DaBc1DB2206827ee6e",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -409,13 +339,6 @@
     "name": "Enjin Coin",
     "symbol": "ENJ",
     "id": "0xb99A23b1a4585fc56d0EC3B76528C27cAd427473",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x43688910273f199B8AE2cA018c13918fb3D37B58": {
-    "name": "RealToken 5942 Audubon Road Detroit MI",
-    "symbol": "REALTOKEN-5942-AUDUBON-RD-DETROIT-MI",
-    "id": "0x7671f9c37bFCee829f54D4Bdd2a226930c91Df7B",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -573,13 +496,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x0000000000b3F879cb30FE243b4Dfee438691c04": {
-    "name": "Gastoken.io",
-    "symbol": "GST2",
-    "id": "0x929507CD3D90Ab11eC4822E9eB5A48eb3a178F19",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x26E75307Fc0C021472fEb8F727839531F112f317": {
     "name": "Crypto20",
     "symbol": "C20",
@@ -601,13 +517,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xfC89f1b932079b462Ef9C8757dE5A28E387b847b": {
-    "name": "RealToken 18276 Appoline Street Detroit MI",
-    "symbol": "REALTOKEN-18276-APPOLINE-ST-DETROIT-MI",
-    "id": "0x5709591aA2769f07A94d65DfB141C620A7C857C8",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xc719d010B63E5bbF2C0551872CD5316ED26AcD83": {
     "name": "Decentralized Insurance Protocol",
     "symbol": "DIP",
@@ -626,13 +535,6 @@
     "name": "Livepeer Token",
     "symbol": "LPT",
     "id": "0xc4a1C45D5546029Fd57128483aE65b56124BFA6A",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x74d2cb65B1158300c3e6BeA149d68509C7B2425d": {
-    "name": "RealToken 25097 Andover Drive Detroit MI",
-    "symbol": "REALTOKEN-25097-ANDOVER-DR-DEARBORN-MI",
-    "id": "0x762bF419272Edf68E1E146E704f07e2640d37471",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },

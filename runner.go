@@ -53,16 +53,16 @@ func main() {
 		//	fmt.Println("Found stable dai! ")
 		//	continue
 		//}
-		//fmt.Println("token address:", k)
-		//fmt.Println("token Name:", v.Name)
-		//fmt.Println("token Symbol:", v.Symbol)
-		//fmt.Println("Exchange Address :", v.Id)
-		//fmt.Println("maker fee:", v.MakerFee)
-		//fmt.Println("taker fee:", v.TakerFee)
-		//fmt.Println("Exchange count: ", count)
+		fmt.Println("token address:", k)
+		fmt.Println("token Name:", v.Name)
+		fmt.Println("token Symbol:", v.Symbol)
+		fmt.Println("Exchange Address :", v.Id)
+		fmt.Println("maker fee:", v.MakerFee)
+		fmt.Println("taker fee:", v.TakerFee)
+		fmt.Println("Exchange count: ", count)
 		uni1.CalculateEthToTokenTrade(client,
 			ctx,
-			10000,
+			1,
 			v.Id,
 			k)
 	}

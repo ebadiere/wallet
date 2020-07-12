@@ -90,3 +90,10 @@ func FloatToBigInt(val float64) *big.Int {
 
 	return result
 }
+
+func BigIntToFloat(val *big.Int) float64 {
+	bigval := new(big.Float).SetInt(val)
+	result, _ := bigval.Float64()
+
+	return result
+}

@@ -53,13 +53,13 @@ func CalculateEthToTokenTrade(client *ethclient.Client,
 	tokenExchange string,
 	tokenAddr string) {
 
-	amount := walletClient.FloatToBigInt(ethAmount)
-	//exchangeAddress := common.HexToAddress(tokenExchange)
-
 	ethReserveBal, err := client.BalanceAt(ctx, common.HexToAddress(tokenExchange), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	ethReserve := walletClient.BigIntToFloat(ethReserveBal)
+	fmt.Println("ethReserve: ", ethReserve)
 
 	erc20, err := ERC20.NewERC20(common.HexToAddress(tokenAddr), client)
 	if err != nil {
@@ -78,13 +78,21 @@ func CalculateEthToTokenTrade(client *ethclient.Client,
 		log.Fatal(err)
 	}
 
-	//tokenReserveBal, err := client.BalanceAt(ctx, common.HexToAddress(tokenExchange), nil)
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
+	tokenReserve := walletClient.BigIntToFloat(tokenReserveBal)
 
-	fmt.Println("Amount: ", amount)
+	tokenAmount := sellEthForTokenAmount(ethAmount, ethReserve, tokenReserve)
+
+	fmt.Println("Amount: ", ethAmount)
 	fmt.Println("Eth reserve Amount: ", ethReserveBal)
 	fmt.Println("Token reserve Amount: ", tokenReserveBal)
-	//inputReserve := use client here
+	fmt.Println("Can buy token amount of: ", tokenAmount)
+}
+
+func sellEthForTokenAmount(ethAmount float64, ethReserve float64, tokenReserveBal float64) float64 {
+
+	numerator := ethAmount * tokenReserveBal * 997
+	denominator := (ethReserve * 1000) + (ethAmount * 997)
+	tokenAmount := numerator / denominator
+
+	return tokenAmount
 }
