@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-type Dai struct {
+type ERC20 struct {
 	Name     string `json:"name"`
 	Symbol   string `json:"symbol"`
 	Id       string `json:"id"`
@@ -19,10 +19,19 @@ type Dai struct {
 
 func main() {
 
-	dai := Dai{
-		Name:     "Dai Stablecoin",
+	dai := ERC20{
+		Name:     "ERC20 Stablecoin",
 		Symbol:   "DAI",
 		Id:       "0x2a1530C4C41db0B0b2bB646CB5Eb1A67b7158667",
+		MakerFee: "0",
+		TakerFee: "0.003",
+	}
+
+	wethAddr := "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+	weth := ERC20{
+		Name:     "Wrapped Ether",
+		Symbol:   "WETH",
+		Id:       "0xA2881A90Bf33F03E7a3f803765Cd2ED5c8928dFb",
 		MakerFee: "0",
 		TakerFee: "0.003",
 	}
@@ -45,6 +54,9 @@ func main() {
 	}
 
 	fmt.Println("dai: ", dai)
+	fmt.Println("weth: ", weth)
+	fmt.Println("wethAddr: ", wethAddr)
+
 	exchanges := uni1.LoadResponse()
 	count := 0
 	for k, v := range exchanges {
