@@ -19,6 +19,7 @@ type ERC20 struct {
 
 func main() {
 
+	daiAddr := "0x6B175474E89094C44Da98b954EedeAC495271d0F"
 	dai := ERC20{
 		Name:     "ERC20 Stablecoin",
 		Symbol:   "DAI",
@@ -72,11 +73,26 @@ func main() {
 		fmt.Println("maker fee:", v.MakerFee)
 		fmt.Println("taker fee:", v.TakerFee)
 		fmt.Println("Exchange count: ", count)
-		uni1.CalculateEthToTokenTrade(client,
+		//Commented out but keep
+		//To run later
+		//	uni1.CalculateEthToTokenTrade(client,
+		//		ctx,
+		//		1,
+		//		v.Id,
+		//		k)
+		//}
+
+		tokenAmount := uni1.CalculateTokenToTokenTrade(
+			client,
 			ctx,
-			1,
+			dai.Id,
+			daiAddr,
+			10000,
 			v.Id,
 			k)
+
+		fmt.Println("DAI Amount: 10000")
+		fmt.Println("Can buy", v.Symbol, "amount of: ", tokenAmount)
 	}
 
 }

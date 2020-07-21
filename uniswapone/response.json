@@ -27,13 +27,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
-    "name": "Dai Stablecoin",
-    "symbol": "DAI",
-    "id": "0x2a1530C4C41db0B0b2bB646CB5Eb1A67b7158667",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x93ED3FBe21207Ec2E8f2d3c3de6e058Cb73Bc04d": {
     "name": "Pinakion",
     "symbol": "PNK",
@@ -157,13 +150,6 @@
     "name": "iEx.ec Network Token",
     "symbol": "RLC",
     "id": "0xA825CAE02B310E9901b4776806CE25db520c8642",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359": {
-    "name": "SAI",
-    "symbol": "Sai Stablecoin v1.0",
-    "id": "0x09cabEC1eAd1c0Ba254B09efb3EE13841712bE14",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -328,13 +314,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xD6F0Bb2A45110f819e908a915237D652Ac7c5AA8": {
-    "name": "DFOHub",
-    "symbol": "BUIDL",
-    "id": "0xFE3eB37C105800842001F759d295eCFb2158A4Cb",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c": {
     "name": "Enjin Coin",
     "symbol": "ENJ",
@@ -381,13 +360,6 @@
     "name": "BTU Protocol",
     "symbol": "BTU",
     "id": "0xeA3A62838477082d8f2106c43796D636dc78d8A4",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x107c4504cd79C5d2696Ea0030a8dD4e92601B82e": {
-    "name": "Bloom Token",
-    "symbol": "BLT",
-    "id": "0x0E6A53B13688018A3df8C69f99aFB19A3068D04f",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -489,13 +461,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x00000100F2A2bd000715001920eB70D229700085": {
-    "name": "TrueCAD",
-    "symbol": "TCAD",
-    "id": "0xF996D7d9BaCb9217ca64BBce1b1cD72E0E886Be6",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x26E75307Fc0C021472fEb8F727839531F112f317": {
     "name": "Crypto20",
     "symbol": "C20",
@@ -510,24 +475,10 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xCb94be6f13A1182E4A4B6140cb7bf2025d28e41B": {
-    "name": "Trustcoin",
-    "symbol": "TRST",
-    "id": "0x95E4649F5209dD292cAF1F087b8F1Db3bE24927f",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xc719d010B63E5bbF2C0551872CD5316ED26AcD83": {
     "name": "Decentralized Insurance Protocol",
     "symbol": "DIP",
     "id": "0x61792F290e5100FBBcBb2309F03A1Bab869fb850",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x083a96c390c942Def68b6343d1c651eEaE604B50": {
-    "name": "Passive Gold",
-    "symbol": "PASG",
-    "id": "0x8F193b443f05aAd921F262DA36d3Dde6c7ADFE9a",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },

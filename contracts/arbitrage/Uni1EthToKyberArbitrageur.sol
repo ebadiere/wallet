@@ -61,8 +61,6 @@ FlashLoanReceiverBase(address(0x24a42fD28C976A61Df5D00D0599C34c4f90748c8))
 
     KyberNetworkProxy public proxy;
 
-    uint256 minAmount;
-
     constructor() public {
         // Instantiate Uniswap Factory A
         uniswapOneFactory = IUniswapFactory(UNISWAP_1_FACTORY);
@@ -83,12 +81,10 @@ FlashLoanReceiverBase(address(0x24a42fD28C976A61Df5D00D0599C34c4f90748c8))
     /*
      * Start the arbitrage
      */
-    function makeArbitrage(uint256 amount, uint256 _minAmount, KyberERC20 _token) public onlyOwner {
+    function makeArbitrage(uint256 amount, KyberERC20 _token) public onlyOwner {
         bytes memory data = "";
         tokenAddress = address (_token);
         token = _token;
-
-        minAmount = _minAmount;
 
         // get Exchange uniswap1 Address
         address uni1Exchange_address = uniswapOneFactory.getExchange(tokenAddress);
@@ -99,12 +95,8 @@ FlashLoanReceiverBase(address(0x24a42fD28C976A61Df5D00D0599C34c4f90748c8))
         lendingPool.flashLoan(address(this), ethAddress, amount, data);
 
         // Any left amount of Eth is considered profit
-//        uint256 profit = address(this).balance;
-        // Sending back the profits
-//        require(
-            msg.sender.transfer(address(this).balance);
-//            "Could not transfer back the profit"
-//        );
+        msg.sender.transfer(address(this).balance);
+
     }
 
     function executeOperation(
@@ -124,15 +116,6 @@ FlashLoanReceiverBase(address(0x24a42fD28C976A61Df5D00D0599C34c4f90748c8))
             token.approve(address(uniSwap1Exchange), _amount),
             "Could not approve Eth sell"
         );
-
-
-//        uint256 tokenBought = uniSwap1Exchange.ethToTokenSwapInput(
-//            _amount,
-//            1,
-//            1,
-//            deadline,
-//            tokenAddress
-//        );
 
         uint256 tokenBought = sellEth(_amount, deadline);
         require(

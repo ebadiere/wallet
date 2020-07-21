@@ -3,7 +3,7 @@ package kyber
 import (
 	_ "crypto/ecdsa"
 	walletClient "github.com/ebadiere/wallet/client"
-	kyber "github.com/ebadiere/wallet/contracts"
+	kyber "github.com/ebadiere/wallet/contracts/Kyber"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	_ "github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
