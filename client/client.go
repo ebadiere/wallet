@@ -8,15 +8,24 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/joho/godotenv"
 	"log"
 	"math/big"
+	"os"
 )
 
 func main() {
 
 }
 
-func Connect(rpcUrl string) (*ethclient.Client, context.Context) {
+func Connect() (*ethclient.Client, context.Context) {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	rpcUrl := os.Getenv("rpcUrl")
 
 	client, err := ethclient.Dial(rpcUrl)
 	if err != nil {

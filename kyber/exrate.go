@@ -29,7 +29,7 @@ func TokenToTokenRate(rpcUrl string, sourceToken string, amount float64, destTok
 		log.Fatal(err)
 	}
 
-	client, ctx := walletClient.Connect(rpcUrl)
+	client, ctx := walletClient.Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
 		log.Fatal("Connection Failed")

@@ -4,9 +4,7 @@ import (
 	"fmt"
 	walletClient "github.com/ebadiere/wallet/client"
 	uni1 "github.com/ebadiere/wallet/uniswapone"
-	"github.com/joho/godotenv"
 	"log"
-	"os"
 )
 
 type ERC20 struct {
@@ -37,17 +35,7 @@ func main() {
 		TakerFee: "0.003",
 	}
 
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	rpcUrl := os.Getenv("rpcUrl")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	client, ctx := walletClient.Connect(rpcUrl)
+	client, ctx := walletClient.Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
 		fmt.Println("Connection Failed")

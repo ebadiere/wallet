@@ -25,7 +25,7 @@ func TestTokenToToken(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	client, ctx := walletClient.Connect(rpcUrl)
+	client, ctx := walletClient.Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
 		t.Error("Connection Failed")

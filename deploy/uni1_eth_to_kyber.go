@@ -28,7 +28,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	client, _ := walletClient.Connect(rpcUrl)
+	client, _ := walletClient.Connect()
 
 	privateKey, err := crypto.HexToECDSA(os.Getenv("privateKey"))
 	if err != nil {

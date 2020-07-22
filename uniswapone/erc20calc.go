@@ -59,7 +59,6 @@ func CalculateEthToTokenTrade(client *ethclient.Client,
 		log.Fatal(err)
 	}
 
-	//ethReserve := walletClient.BigIntToFloat(ethReserveBal)
 	ethReserve := utils.ToDecimal(ethReserveBal, 18)
 	fmt.Println("ethReserve: ", ethReserve)
 
@@ -80,7 +79,6 @@ func CalculateEthToTokenTrade(client *ethclient.Client,
 		log.Fatal(err)
 	}
 
-	//tokenReserve := walletClient.BigIntToFloat(tokenReserveBal)
 	tokenReserve := utils.ToDecimal(tokenReserveBal, 18)
 
 	tokenAmount := sellEthForTokenAmount(decimal.NewFromFloat(ethAmount), ethReserve, tokenReserve)
@@ -122,9 +120,6 @@ func CalculateTokenToTokenTrade(
 		log.Fatal(err)
 	}
 
-	//inputReserve := walletClient.BigIntToFloat(inputTokenReserveBal)
-	//wei := new(big.Int)
-	//inputReserve, _ := wei.SetString(inputTokenReserveBal.String(), 18)
 	inputReserve := utils.ToDecimal(inputTokenReserveBal, 18)
 	fmt.Println("DAI tokenReserve: ", inputReserve)
 
@@ -134,16 +129,11 @@ func CalculateTokenToTokenTrade(
 	}
 	fmt.Println("Eth Reserve: ", inputEthReserveBal)
 
-	//ethReserve := walletClient.BigIntToFloat(inputEthReserveBal)
 	ethReserve := utils.ToDecimal(inputEthReserveBal, 18)
 
 	fmt.Println("ethReserve: ", ethReserve)
 
-	combinedFee := inputTokenAmount * 0.00591
-	amountMinusFee := inputTokenAmount - combinedFee
-	fmt.Println("Fee: ", amountMinusFee)
-
-	ethAmount := sellTokenForEth(decimal.NewFromFloat(amountMinusFee), ethReserve, inputReserve)
+	ethAmount := sellTokenForEth(decimal.NewFromFloat(inputTokenAmount), ethReserve, inputReserve)
 	fmt.Println("ethAmount: ", ethAmount)
 
 	// next steps Eth to output token
@@ -152,7 +142,6 @@ func CalculateTokenToTokenTrade(
 		log.Fatal(err)
 	}
 
-	//outputEthReserve := walletClient.BigIntToFloat(outputEthReserveBal)
 	outputEthReserve := utils.ToDecimal(outputEthReserveBal, 18)
 	fmt.Println("ethReserve: ", outputEthReserve)
 
@@ -161,7 +150,6 @@ func CalculateTokenToTokenTrade(
 		log.Fatal(err)
 	}
 
-	//outputReserve := walletClient.BigIntToFloat(outputTokenReserveBal)
 	outputReserve := utils.ToDecimal(outputTokenReserveBal, 18)
 	fmt.Println("Output tokenReserve: ", outputReserve)
 

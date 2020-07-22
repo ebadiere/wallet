@@ -202,13 +202,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x9Cb2f26A23b8d89973F08c957C4d7cdf75CD341c": {
-    "name": "Digital Rand",
-    "symbol": "DZAR",
-    "id": "0x80324Ec8d64425B37f8603A97097dA7D493dbc79",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xD56daC73A4d6766464b38ec6D91eB45Ce7457c44": {
     "name": "Panvala pan",
     "symbol": "PAN",
@@ -353,13 +346,6 @@
     "name": "PUBLX",
     "symbol": "PUBLX",
     "id": "0x51178a657A183AC593c58e9b961EeFd8e20Bc9C2",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xb683D83a532e2Cb7DFa5275eED3698436371cc9f": {
-    "name": "BTU Protocol",
-    "symbol": "BTU",
-    "id": "0xeA3A62838477082d8f2106c43796D636dc78d8A4",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },

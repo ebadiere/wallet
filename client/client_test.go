@@ -23,9 +23,8 @@ func TestSend(t *testing.T) {
 }
 
 func getClientConnection(t *testing.T) (*ethclient.Client, context.Context) {
-	rpcUrl := "http://127.0.0.1:7545"
 
-	client, ctx := Connect(rpcUrl)
+	client, ctx := Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
 		t.Error("Connection Failed")
