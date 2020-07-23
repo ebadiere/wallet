@@ -139,13 +139,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xcD62b1C403fa761BAadFC74C525ce2B51780b184": {
-    "name": "Aragon Network Juror",
-    "symbol": "ANJ",
-    "id": "0x64A9edD3f5fce0252Cd708E26c8dd11205742826",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x607F4C5BB672230e8672085532f7e901544a7375": {
     "name": "iEx.ec Network Token",
     "symbol": "RLC",

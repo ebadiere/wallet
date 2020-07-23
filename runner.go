@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	walletClient "github.com/ebadiere/wallet/client"
+	"github.com/ebadiere/wallet/kyber"
 	uni1 "github.com/ebadiere/wallet/uniswapone"
 	"log"
 )
@@ -70,7 +71,7 @@ func main() {
 		//		k)
 		//}
 
-		tokenAmount := uni1.CalculateTokenToTokenTrade(
+		uni1TokenAmount := uni1.CalculateTokenToTokenTrade(
 			client,
 			ctx,
 			dai.Id,
@@ -80,7 +81,14 @@ func main() {
 			k)
 
 		fmt.Println("DAI Amount: 10000")
-		fmt.Println("Can buy", v.Symbol, "amount of: ", tokenAmount)
+		fmt.Println("Can buy", v.Symbol, "amount of: ", uni1TokenAmount)
+
+		kyberTokenAmount := kyber.TokenToTokenCalc(
+			client,
+			k,
+			uni1TokenAmount,
+			daiAddr)
+		fmt.Println("DAI Amount back: ", kyberTokenAmount)
 	}
 
 }

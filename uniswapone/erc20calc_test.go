@@ -33,11 +33,11 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 		TakerFee: "0.003",
 	}
 
-	nmrAddr := "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671"
-	nmr := LISTING{
-		Name:     "Numeraire",
-		Symbol:   "NMR",
-		Id:       "0x2Bf5A5bA29E60682fC56B2Fcf9cE07Bef4F6196f",
+	dgxAddr := "0x4f3AfEC4E5a3F2A6a1A411DEF7D7dFe50eE057bF"
+	dgx := LISTING{
+		Name:     "Digix Gold Token",
+		Symbol:   "DGX",
+		Id:       "0xb92dE8B30584392Af27726D5ce04Ef3c4e5c9924",
 		MakerFee: "0",
 		TakerFee: "0.003",
 	}
@@ -54,10 +54,10 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 		dai.Id,
 		daiAddr,
 		10000,
-		nmr.Id,
-		nmrAddr)
+		dgx.Id,
+		dgxAddr)
 
 	fmt.Println("DAI Amount: 10000")
-	fmt.Println("Can buy", nmr.Symbol, "amount of: ", tokenAmount)
+	fmt.Println("Can buy", dgx.Symbol, "amount of: ", tokenAmount)
 	fmt.Println("Whoohoo")
 }

@@ -105,15 +105,9 @@ func CalculateTokenToTokenTrade(
 		Context:     nil,
 	}
 
-	erc20Input, err := ERC20.NewERC20(common.HexToAddress(inputTokenAddress), client)
-	if err != nil {
-		log.Fatal(err)
-	}
+	erc20Input, inputDec, err := erc20(client, inputTokenAddress, auth)
 
-	erc20Output, err := ERC20.NewERC20(common.HexToAddress(outputTokenAddress), client)
-	if err != nil {
-		log.Fatal(err)
-	}
+	erc20Output, outputDec, err := erc20(client, outputTokenAddress, auth)
 
 	inputTokenReserveBal, err := erc20Input.BalanceOf(&auth, common.HexToAddress(inputTokenExchange))
 	if err != nil {
@@ -129,7 +123,7 @@ func CalculateTokenToTokenTrade(
 	}
 	fmt.Println("Eth Reserve: ", inputEthReserveBal)
 
-	ethReserve := utils.ToDecimal(inputEthReserveBal, 18)
+	ethReserve := utils.ToDecimal(inputEthReserveBal, int(inputDec))
 
 	fmt.Println("ethReserve: ", ethReserve)
 
@@ -150,13 +144,22 @@ func CalculateTokenToTokenTrade(
 		log.Fatal(err)
 	}
 
-	outputReserve := utils.ToDecimal(outputTokenReserveBal, 18)
+	outputReserve := utils.ToDecimal(outputTokenReserveBal, int(outputDec))
 	fmt.Println("Output tokenReserve: ", outputReserve)
 
 	tokenAmount, _ := sellEthForTokenAmount(ethAmount, outputEthReserve, outputReserve).Float64()
 
 	return tokenAmount
 
+}
+
+func erc20(client *ethclient.Client, inputTokenAddress string, auth bind.CallOpts) (*ERC20.ERC20, uint8, error) {
+	erc20, err := ERC20.NewERC20(common.HexToAddress(inputTokenAddress), client)
+	dec, err := erc20.Decimals(&auth)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return erc20, dec, err
 }
 
 func sellEthForTokenAmount(ethAmount decimal.Decimal, ethReserve decimal.Decimal, tokenReserveBal decimal.Decimal) decimal.Decimal {
@@ -175,5 +178,4 @@ func sellTokenForEth(tokenAmount decimal.Decimal, ethReserve decimal.Decimal, in
 	outputEth := numerator.Div(denominator)
 
 	return outputEth
-
 }

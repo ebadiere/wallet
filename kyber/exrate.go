@@ -2,13 +2,14 @@ package kyber
 
 import (
 	_ "crypto/ecdsa"
-	walletClient "github.com/ebadiere/wallet/client"
+	"fmt"
 	kyber "github.com/ebadiere/wallet/contracts/Kyber"
+	"github.com/ebadiere/wallet/utils"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	_ "github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/ethclient"
 	_ "github.com/ethereum/go-ethereum/ethclient"
-	"github.com/joho/godotenv"
 	"log"
 	"math/big"
 	"os"
@@ -19,21 +20,14 @@ type rate struct {
 	SlippageRate *big.Int
 }
 
-func TokenToTokenRate(rpcUrl string, sourceToken string, amount float64, destToken string) (struct {
+func TokenToTokenRate(
+	client *ethclient.Client,
+	sourceToken string,
+	amount float64,
+	destToken string) (struct {
 	ExpectedRate *big.Int
 	SlippageRate *big.Int
 }, error) {
-
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	client, ctx := walletClient.Connect()
-	chainID, _ := client.ChainID(ctx)
-	if chainID == nil {
-		log.Fatal("Connection Failed")
-	}
 
 	kyberAddress := common.HexToAddress(os.Getenv("kyberNetworkProxyAddress"))
 	kyberProxy, err := kyber.NewKyber(kyberAddress, client)
@@ -42,7 +36,7 @@ func TokenToTokenRate(rpcUrl string, sourceToken string, amount float64, destTok
 		log.Fatal(err)
 	}
 
-	amountBigIn := walletClient.FloatToBigInt(amount)
+	amountBigIn := utils.ToWei(amount, 18)
 	// Call Get ExpectedRate here
 
 	auth := bind.CallOpts{
@@ -53,4 +47,32 @@ func TokenToTokenRate(rpcUrl string, sourceToken string, amount float64, destTok
 	}
 
 	return kyberProxy.GetExpectedRate(&auth, common.HexToAddress(sourceToken), common.HexToAddress(destToken), amountBigIn)
+}
+
+func TokenToTokenCalc(
+	client *ethclient.Client,
+	sourceTokenAddress string,
+	sourceTokenAmount float64,
+	destTokenAddress string) float64 {
+
+	rate, err := TokenToTokenRate(
+		client,
+		sourceTokenAddress,
+		sourceTokenAmount,
+		destTokenAddress)
+
+	if err != nil {
+		log.Fatal("Connection Failed", err)
+	}
+
+	fmt.Println("Expected Rate: ", rate.ExpectedRate)
+	fmt.Println("Slippage: ", rate.SlippageRate)
+
+	sourceAmount := utils.ToDecimal(sourceTokenAmount, 18)
+	// use slippage rate for now
+	slipRate := utils.ToDecimal(rate.SlippageRate, 18)
+	tokens, _ := sourceAmount.Mul(slipRate).Float64()
+
+	return tokens
+
 }
