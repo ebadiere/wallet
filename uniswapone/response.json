@@ -167,13 +167,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xD29F0b5b3F50b07Fe9a9511F7d86F4f4bAc3f8c4": {
-    "name": "Liquidity.Network Token",
-    "symbol": "LQD",
-    "id": "0xe3406e7D0155E0a83236eC25D34Cd3D903036669",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F": {
     "name": "Synthetix Network Token",
     "symbol": "SNX",
@@ -416,13 +409,6 @@
     "name": "PieDAO BTC++",
     "symbol": "BTC++",
     "id": "0x0b5e26829B72654620cD431E685FD71ad956E58E",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x8BA6DcC667d3FF64C1A2123cE72FF5F0199E5315": {
-    "name": "AlexMasmej",
-    "symbol": "ALEX",
-    "id": "0xB49c53f2E459cE96b04318610aBD77F4E83113dB",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },

@@ -10,6 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	_ "github.com/ethereum/go-ethereum/ethclient"
+	"github.com/shopspring/decimal"
 	"log"
 	"math/big"
 	"os"
@@ -38,6 +39,7 @@ func TokenToTokenRate(
 
 	amountBigIn := utils.ToWei(amount, 18)
 	// Call Get ExpectedRate here
+	fmt.Println("Amiount BigIn: ", amountBigIn)
 
 	auth := bind.CallOpts{
 		Pending:     false,
@@ -68,7 +70,7 @@ func TokenToTokenCalc(
 	fmt.Println("Expected Rate: ", rate.ExpectedRate)
 	fmt.Println("Slippage: ", rate.SlippageRate)
 
-	sourceAmount := utils.ToDecimal(sourceTokenAmount, 18)
+	sourceAmount := decimal.NewFromFloat(sourceTokenAmount)
 	// use slippage rate for now
 	slipRate := utils.ToDecimal(rate.SlippageRate, 18)
 	tokens, _ := sourceAmount.Mul(slipRate).Float64()

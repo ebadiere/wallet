@@ -42,6 +42,15 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 		TakerFee: "0.003",
 	}
 
+	kncAddr := "0xdd974D5C2e2928deA5F71b9825b8b646686BD200"
+	knc := LISTING{
+		Name:     "Kyber Network Crystal",
+		Symbol:   "KNC",
+		Id:       "0x49c4f9bc14884f6210F28342ceD592A633801a8b",
+		MakerFee: "0",
+		TakerFee: "0.003",
+	}
+
 	client, ctx := walletClient.Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
@@ -60,4 +69,18 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 	fmt.Println("DAI Amount: 10000")
 	fmt.Println("Can buy", dgx.Symbol, "amount of: ", tokenAmount)
 	fmt.Println("Whoohoo")
+
+	tokenAmount = CalculateTokenToTokenTrade(
+		client,
+		ctx,
+		knc.Id,
+		kncAddr,
+		10000,
+		dgx.Id,
+		dgxAddr)
+
+	fmt.Println("KNC Amount: 10000")
+	fmt.Println("Can buy", knc.Symbol, " DAI amount of: ", tokenAmount)
+	fmt.Println("Whoohoo")
+
 }
