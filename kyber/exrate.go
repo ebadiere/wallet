@@ -39,7 +39,7 @@ func TokenToTokenRate(
 
 	amountBigIn := utils.ToWei(amount, 18)
 	// Call Get ExpectedRate here
-	fmt.Println("Amiount BigIn: ", amountBigIn)
+	fmt.Println("Amount BigIn: ", amountBigIn)
 
 	auth := bind.CallOpts{
 		Pending:     false,
@@ -55,7 +55,8 @@ func TokenToTokenCalc(
 	client *ethclient.Client,
 	sourceTokenAddress string,
 	sourceTokenAmount float64,
-	destTokenAddress string) float64 {
+	destTokenAddress string,
+	destTokenDecimal uint8) float64 {
 
 	rate, err := TokenToTokenRate(
 		client,
@@ -67,12 +68,15 @@ func TokenToTokenCalc(
 		log.Fatal("Connection Failed", err)
 	}
 
+	// Get the decimal numbers from erc20
+
 	fmt.Println("Expected Rate: ", rate.ExpectedRate)
-	fmt.Println("Slippage: ", rate.SlippageRate)
 
 	sourceAmount := decimal.NewFromFloat(sourceTokenAmount)
 	// use slippage rate for now
-	slipRate := utils.ToDecimal(rate.SlippageRate, 18)
+	slipRate := utils.ToDecimal(rate.SlippageRate, int(destTokenDecimal))
+	fmt.Println("Slippage: ", slipRate)
+
 	tokens, _ := sourceAmount.Mul(slipRate).Float64()
 
 	return tokens

@@ -1,11 +1,4 @@
 {
-  "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39": {
-    "name": "HEX",
-    "symbol": "HEX",
-    "id": "0x05cDe89cCfa0adA8C88D5A23caaa79Ef129E7883",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599": {
     "name": "Wrapped BTC",
     "symbol": "WBTC",
@@ -17,13 +10,6 @@
     "name": "Maker",
     "symbol": "MKR",
     "id": "0x2C4Bd064b998838076fa341A83d007FC2FA50957",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x5e74C9036fb86BD7eCdcb084a0673EFc32eA31cb": {
-    "name": "Synth sETH",
-    "symbol": "sETH",
-    "id": "0xe9Cf7887b93150D4F2Da7dFc6D502B216438F244",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -41,31 +27,10 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xaAAf91D9b90dF800Df4F55c205fd6989c977E73a": {
-    "name": "Monolith TKN",
-    "symbol": "TKN",
-    "id": "0xb6cFBf322db47D39331E306005DC7E5e6549942B",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x8A9C67fee641579dEbA04928c4BC45F66e26343A": {
-    "name": "Jarvis Reward Token",
-    "symbol": "JRT",
-    "id": "0x634e27269A029EdB2b70b5EF43273F5eEd9Ebcc2",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x514910771AF9Ca656af840dff83E8264EcF986CA": {
     "name": "ChainLink Token",
     "symbol": "LINK",
     "id": "0xF173214C720f58E03e194085B1DB28B50aCDeeaD",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xB4272071eCAdd69d933AdcD19cA99fe80664fc08": {
-    "name": "CryptoFranc",
-    "symbol": "XCHF",
-    "id": "0x8dE0d002DC83478f479dC31F76cB0a8aa7CcEa17",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -76,38 +41,10 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x42d6622deCe394b54999Fbd73D108123806f6a18": {
-    "name": "SPANK",
-    "symbol": "SPANK",
-    "id": "0x4e395304655F0796bc3bc63709DB72173b9DdF98",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671": {
-    "name": "Numeraire",
-    "symbol": "NMR",
-    "id": "0x2Bf5A5bA29E60682fC56B2Fcf9cE07Bef4F6196f",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x0f7F961648aE6Db43C75663aC7E5414Eb79b5704": {
-    "name": "XIO Network",
-    "symbol": "XIO",
-    "id": "0x7B6E5278a14d5318571d65aceD036d09c998C707",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x1985365e9f78359a9B6AD760e32412f4a445E862": {
     "name": "Reputation",
     "symbol": "REP",
     "id": "0x48B04d2A05B6B604d8d5223Fd1984f191DED51af",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x6810e776880C02933D47DB1b9fc05908e5386b96": {
-    "name": "Gnosis Token",
-    "symbol": "GNO",
-    "id": "0xe8e45431b93215566BA923a7E611B7342Ea954DF",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -118,45 +55,10 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0xF970b8E36e23F7fC3FD752EeA86f8Be8D83375A6": {
-    "name": "Ripio Credit Network Token",
-    "symbol": "RCN",
-    "id": "0xD91FF16Ef92568fC27F466C3c5613e43313Ab1dc",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x8400D94A5cb0fa0D041a3788e395285d61c9ee5e": {
     "name": "UniBright",
     "symbol": "UBT",
     "id": "0xfc96e234d4B31C63051E707105fCC4aba37807Fa",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x9469D013805bFfB7D3DEBe5E7839237e535ec483": {
-    "name": "Darwinia Network Native Token",
-    "symbol": "RING",
-    "id": "0xeBD8AA50b26bFa63007d61eBa777A9DdE7e43c64",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x607F4C5BB672230e8672085532f7e901544a7375": {
-    "name": "iEx.ec Network Token",
-    "symbol": "RLC",
-    "id": "0xA825CAE02B310E9901b4776806CE25db520c8642",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x0000000000085d4780B73119b644AE5ecd22b376": {
-    "name": "TrueUSD",
-    "symbol": "TUSD",
-    "id": "0x5048b9d01097498Fd72F3F14bC9Bc74A5aAc8fA7",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xB4EFd85c19999D84251304bDA99E90B92300Bd93": {
-    "name": "Rocket Pool",
-    "symbol": "RPL",
-    "id": "0x3Fb2F18065926DdB33E7571475c509541d15dA0e",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -174,62 +76,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x09617F6fD6cF8A71278ec86e23bBab29C04353a7": {
-    "name": "Unblocked Ledger Token",
-    "symbol": "ULT",
-    "id": "0x28d9353611C5A0d5a026A648c05E5d6523e41CBf",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x6737fE98389Ffb356F64ebB726aA1a92390D94Fb": {
-    "name": "ZeroCarbon",
-    "symbol": "ZCC",
-    "id": "0x0BA1183587f90E1892D60747E0017219C19972F1",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xD56daC73A4d6766464b38ec6D91eB45Ce7457c44": {
-    "name": "Panvala pan",
-    "symbol": "PAN",
-    "id": "0xF53bBFBff01c50F2D42D542b09637DcA97935fF7",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x23B608675a2B2fB1890d3ABBd85c5775c51691d5": {
-    "name": "Unisocks Edition 0",
-    "symbol": "SOCKS",
-    "id": "0x22d8432cc7aA4f8712a655fC4cdfB1baEC29FCA9",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x419D0d8BdD9aF5e606Ae2232ed285Aff190E711b": {
-    "name": "FunFair",
-    "symbol": "FUN",
-    "id": "0x60a87cC7Fca7E53867facB79DA73181B1bB4238B",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x255Aa6DF07540Cb5d3d297f0D0D4D84cb52bc8e6": {
-    "name": "Raiden Token",
-    "symbol": "RDN",
-    "id": "0x7D03CeCb36820b4666F45E1b4cA2538724Db271C",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x14094949152EDDBFcd073717200DA82fEd8dC960": {
-    "name": "bZx DAI iToken",
-    "symbol": "iDAI",
-    "id": "0x81eeD7F1EcbD7FA9978fcc7584296Fb0C215Dc5C",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xec67005c4E498Ec7f55E092bd1d35cbC47C91892": {
-    "name": "Melon Token",
-    "symbol": "MLN",
-    "id": "0xA931F4eB165AC307fD7431b5EC6eADde53E14b0C",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0xdd974D5C2e2928deA5F71b9825b8b646686BD200": {
     "name": "Kyber Network Crystal",
     "symbol": "KNC",
@@ -244,52 +90,10 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x793e2602A8396468f3CE6E34C1B6C6Fd6D985bAD": {
-    "name": "Saint Fame: $ICK Mask",
-    "symbol": "ICK",
-    "id": "0x3b4167B4d86b696ef7710Ee9306CD303786F0A0b",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x408e41876cCCDC0F92210600ef50372656052a38": {
     "name": "Republic Token",
     "symbol": "REN",
     "id": "0x43892992B0b102459E895B88601Bb2C76736942c",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xfC1E690f61EFd961294b3e1Ce3313fBD8aa4f85d": {
-    "name": "Aave Interest bearing DAI",
-    "symbol": "aDAI",
-    "id": "0x7cfab87AaC0899c093235b342AC0e5B1ACF159EB",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xc12d099be31567add4e4e4d0D45691C3F58f5663": {
-    "name": "Auctus Token",
-    "symbol": "AUC",
-    "id": "0x37134075F5B5a0a94ac891C7B5ec5DB5CfCf392C",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x6c6EE5e31d828De241282B9606C8e98Ea48526E2": {
-    "name": "HoloToken",
-    "symbol": "HOT",
-    "id": "0xd4777E164c6C683E10593E08760B803D58529a8E",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xF1290473E210b2108A85237fbCd7b6eb42Cc654F": {
-    "name": "HedgeTrade",
-    "symbol": "HEDG",
-    "id": "0xb5b46A2521048D7F2f9D9603eEB1B7aBf7d18886",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x4575f41308EC1483f3d399aa9a2826d74Da13Deb": {
-    "name": "Orchid",
-    "symbol": "OXT",
-    "id": "0xe9a5bbe41dc63D555E06746b047d624E3343EA52",
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
@@ -307,20 +111,6 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x0Cf0Ee63788A0849fE5297F3407f701E122cC023": {
-    "name": "Streamr DATAcoin",
-    "symbol": "DATA",
-    "id": "0x4F0d6E2179938828CfF93dA40a8BA1Df7519Ca8C",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x4156D3342D5c385a87D264F90653733592000581": {
-    "name": "Salt",
-    "symbol": "SALT",
-    "id": "0xC0C59cDe851bfcbdddD3377EC10ea54A18Efb937",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E": {
     "name": "Status Network Token",
     "symbol": "SNT",
@@ -328,192 +118,10 @@
     "maker_fee": "0",
     "taker_fee": "0.003"
   },
-  "0x1a6658F40e51b372E593B7d2144c1402d5cf33E8": {
-    "name": "PUBLX",
-    "symbol": "PUBLX",
-    "id": "0x51178a657A183AC593c58e9b961EeFd8e20Bc9C2",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x10bA8C420e912bF07BEdaC03Aa6908720db04e0c": {
-    "name": "Raise",
-    "symbol": "RAISE",
-    "id": "0x5C15BE94476F4433303873BE5D3fF8A03817107E",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x543Ff227F64Aa17eA132Bf9886cAb5DB55DCAddf": {
-    "name": "DAOstack",
-    "symbol": "GEN",
-    "id": "0x26Cc0EAb6Cb650B0Db4D0d0dA8cB5BF69F4ad692",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x9Bfb088C9f311415E3F9B507DA73081c52a49d8c": {
-    "name": "BOY Cassette Tape by RAC",
-    "symbol": "TAPE",
-    "id": "0xa50d0f016B4820699Eb6Bd90449e8129bBe31d49",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x4f3AfEC4E5a3F2A6a1A411DEF7D7dFe50eE057bF": {
-    "name": "Digix Gold Token",
-    "symbol": "DGX",
-    "id": "0xb92dE8B30584392Af27726D5ce04Ef3c4e5c9924",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xE25dB4bAA49EA3B8627986ffC22c7bd5E0c88d49": {
-    "name": "Passive",
-    "symbol": "PAS",
-    "id": "0xadfA51248ae5F82008C188CA3f329D4cADdAd1Ec",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x0F5D2fB29fb7d3CFeE444a200298f468908cC942": {
-    "name": "Decentraland MANA",
-    "symbol": "MANA",
-    "id": "0xC6581Ce3A005e2801c1e0903281BBd318eC5B5C2",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x00000000441378008EA67F4284A57932B1c000a5": {
-    "name": "TrueGBP",
-    "symbol": "TGBP",
-    "id": "0x6bFa119a191576Ba26Bc5e711432aCA0cFda04DE",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xBcc66ed2aB491e9aE7Bf8386541Fb17421Fa9d35": {
-    "name": "Skull",
-    "symbol": "SKULL",
-    "id": "0xae33701b6b48267dB4BB51e472e4E7aB5aAD2e3E",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xbe15c4Ebb73A67DDD94b83B237D2bdDe5a5079Ba": {
-    "name": "Complete New Commerce Chain",
-    "symbol": "CNCC",
-    "id": "0x0Fc809Dd1475cd6056B6D36A832CB53bCb2E8786",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828": {
-    "name": "UMA Voting Token v1",
-    "symbol": "UMA",
-    "id": "0x6264C8d158F32Bd8C01B8A0102b57dfcFCfb8561",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x0327112423F3A68efdF1fcF402F6c5CB9f7C33fd": {
-    "name": "PieDAO BTC++",
-    "symbol": "BTC++",
-    "id": "0x0b5e26829B72654620cD431E685FD71ad956E58E",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x00006100F7090010005F1bd7aE6122c3C2CF0090": {
-    "name": "TrueAUD",
-    "symbol": "TAUD",
-    "id": "0x88dF13889E20EFa93Ff9a0C08f101F431bD9DDD7",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x0000852600CEB001E08e00bC008be620d60031F2": {
-    "name": "TrueHKD",
-    "symbol": "THKD",
-    "id": "0x505C02B4aa1286375FBDF0c390AC0fe9209DCB05",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x26E75307Fc0C021472fEb8F727839531F112f317": {
-    "name": "Crypto20",
-    "symbol": "C20",
-    "id": "0xF7B5A4b934658025390ff69dB302BC7F2AC4a542",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xaaAEBE6Fe48E54f431b0C390CfaF0b017d09D42d": {
-    "name": "Celsius",
-    "symbol": "CEL",
-    "id": "0x91dEbb54De02872a259C17699D9B794Bc949fed2",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xc719d010B63E5bbF2C0551872CD5316ED26AcD83": {
-    "name": "Decentralized Insurance Protocol",
-    "symbol": "DIP",
-    "id": "0x61792F290e5100FBBcBb2309F03A1Bab869fb850",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x58b6A8A3302369DAEc383334672404Ee733aB239": {
-    "name": "Livepeer Token",
-    "symbol": "LPT",
-    "id": "0xc4a1C45D5546029Fd57128483aE65b56124BFA6A",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x27054b13b1B798B345b591a4d22e6562d47eA75a": {
-    "name": "AirSwap Token",
-    "symbol": "AST",
-    "id": "0xc462A2fd31c83f6ee220400D1506d9E9f1f4BB01",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xF5DCe57282A584D2746FaF1593d3121Fcac444dC": {
-    "name": "Compound Dai",
-    "symbol": "cDAI",
-    "id": "0x45A2FDfED7F7a2c791fb1bdF6075b83faD821ddE",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
   "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51": {
     "name": "Synth sUSD",
     "symbol": "sUSD",
     "id": "0xB944d13b2f4047fc7bd3F7013bcf01b115fb260d",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x5c872500c00565505F3624AB435c222E558E9ff8": {
-    "name": "CoTrader",
-    "symbol": "COT",
-    "id": "0xf7e033ab0F295E1E240F2BE18A0650B2D2a1a4c3",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x340D2bdE5Eb28c1eed91B2f790723E3B160613B7": {
-    "name": "BLOCKv Token",
-    "symbol": "VEE",
-    "id": "0xeFaA7f81C5397A73b43F340fe3397281C07a4057",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x92cCcEf452D956137f9C9bb8954f8235e51949A0": {
-    "name": "Totally normal tokenS",
-    "symbol": "TONS",
-    "id": "0x9baB5Fd06c3f6d61EFc982006Db8a6C9E6650250",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0x06f65b8CfCb13a9FE37d836fE9708dA38Ecb29B2": {
-    "name": "SAINT FAME: Genesis Shirt",
-    "symbol": "FAME",
-    "id": "0x5e7907aC70b9a781365c72F2acEE96710bdA042e",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xA809CeDeE9B61956c768EAa10272dd5E0FD1A985": {
-    "name": "CAMI",
-    "symbol": "CAMI",
-    "id": "0x36BFbEDc15f822A78940965EbB772A55b6A38A81",
-    "maker_fee": "0",
-    "taker_fee": "0.003"
-  },
-  "0xdc8092AaF83e00Ebf9B01A2e90b7B7eF867ba503": {
-    "name": "Calvin",
-    "symbol": "CALVIN",
-    "id": "0x657de502Ee9feD80d5496A1dA0007Fe72B2bd18B",
     "maker_fee": "0",
     "taker_fee": "0.003"
   }

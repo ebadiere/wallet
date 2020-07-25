@@ -51,6 +51,15 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 		TakerFee: "0.003",
 	}
 
+	ubtAddr := "0x8400D94A5cb0fa0D041a3788e395285d61c9ee5e"
+	ubt := LISTING{
+		Name:     "UniBright",
+		Symbol:   "UBT",
+		Id:       "0xfc96e234d4B31C63051E707105fCC4aba37807Fa",
+		MakerFee: "0",
+		TakerFee: "0.003",
+	}
+
 	client, ctx := walletClient.Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
@@ -81,6 +90,19 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 
 	fmt.Println("KNC Amount: 10000")
 	fmt.Println("Can buy", knc.Symbol, " DAI amount of: ", tokenAmount)
+	fmt.Println("Whoohoo")
+
+	tokenAmount = CalculateTokenToTokenTrade(
+		client,
+		ctx,
+		dai.Id,
+		daiAddr,
+		10000,
+		ubt.Id,
+		ubtAddr)
+
+	fmt.Println("DAI Amount: 10000")
+	fmt.Println("Can buy", ubt.Symbol, " DAI amount of: ", tokenAmount)
 	fmt.Println("Whoohoo")
 
 }

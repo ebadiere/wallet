@@ -55,13 +55,13 @@ func main() {
 		//	fmt.Println("Found stable dai! ")
 		//	continue
 		//}
-		fmt.Println("token address:", k)
-		fmt.Println("token Name:", v.Name)
-		fmt.Println("token Symbol:", v.Symbol)
-		fmt.Println("Exchange Address :", v.Id)
-		fmt.Println("maker fee:", v.MakerFee)
-		fmt.Println("taker fee:", v.TakerFee)
-		fmt.Println("Exchange count: ", count)
+		//fmt.Println("token address:", k)
+		//fmt.Println("token Name:", v.Name)
+		//fmt.Println("token Symbol:", v.Symbol)
+		//fmt.Println("Exchange Address :", v.Id)
+		//fmt.Println("maker fee:", v.MakerFee)
+		//fmt.Println("taker fee:", v.TakerFee)
+		//fmt.Println("Exchange count: ", count)
 		//Commented out but keep
 		//To run later
 		//	uni1.CalculateEthToTokenTrade(client,
@@ -71,7 +71,7 @@ func main() {
 		//		k)
 		//}
 
-		uni1TokenAmount := uni1.CalculateTokenToTokenTrade(
+		uni1TokenAmount, tokenDecimals := uni1.CalculateTokenToTokenTrade(
 			client,
 			ctx,
 			dai.Id,
@@ -87,7 +87,8 @@ func main() {
 			client,
 			k,
 			uni1TokenAmount,
-			daiAddr)
+			daiAddr,
+			tokenDecimals)
 		fmt.Println("DAI Amount back: ", kyberTokenAmount)
 	}
 

@@ -96,7 +96,7 @@ func CalculateTokenToTokenTrade(
 	inputTokenAddress string,
 	inputTokenAmount float64,
 	outputTokenExchange string,
-	outputTokenAddress string) float64 {
+	outputTokenAddress string) (float64, uint8) {
 
 	auth := bind.CallOpts{
 		Pending:     false,
@@ -149,7 +149,7 @@ func CalculateTokenToTokenTrade(
 
 	tokenAmount, _ := sellEthForTokenAmount(ethAmount, outputEthReserve, outputReserve).Float64()
 
-	return tokenAmount
+	return tokenAmount, outputDec
 
 }
 
