@@ -66,7 +66,7 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 		fmt.Println("Connection Failed")
 		log.Fatal("Connection Failed")
 	}
-	tokenAmount := CalculateTokenToTokenTrade(
+	tokenAmount, _ := CalculateTokenToTokenTrade(
 		client,
 		ctx,
 		dai.Id,
@@ -79,7 +79,7 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 	fmt.Println("Can buy", dgx.Symbol, "amount of: ", tokenAmount)
 	fmt.Println("Whoohoo")
 
-	tokenAmount = CalculateTokenToTokenTrade(
+	tokenAmount, _ = CalculateTokenToTokenTrade(
 		client,
 		ctx,
 		knc.Id,
@@ -92,7 +92,7 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 	fmt.Println("Can buy", knc.Symbol, " DAI amount of: ", tokenAmount)
 	fmt.Println("Whoohoo")
 
-	tokenAmount = CalculateTokenToTokenTrade(
+	tokenAmount, _ = CalculateTokenToTokenTrade(
 		client,
 		ctx,
 		dai.Id,

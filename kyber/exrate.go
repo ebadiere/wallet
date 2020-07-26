@@ -25,6 +25,7 @@ func TokenToTokenRate(
 	client *ethclient.Client,
 	sourceToken string,
 	amount float64,
+	sourceDecimals uint8,
 	destToken string) (struct {
 	ExpectedRate *big.Int
 	SlippageRate *big.Int
@@ -37,7 +38,7 @@ func TokenToTokenRate(
 		log.Fatal(err)
 	}
 
-	amountBigIn := utils.ToWei(amount, 18)
+	amountBigIn := utils.ToWei(amount, int(sourceDecimals))
 	// Call Get ExpectedRate here
 	fmt.Println("Amount BigIn: ", amountBigIn)
 
@@ -55,13 +56,15 @@ func TokenToTokenCalc(
 	client *ethclient.Client,
 	sourceTokenAddress string,
 	sourceTokenAmount float64,
+	sourceTokenDecimals uint8,
 	destTokenAddress string,
-	destTokenDecimal uint8) float64 {
+) float64 {
 
 	rate, err := TokenToTokenRate(
 		client,
 		sourceTokenAddress,
 		sourceTokenAmount,
+		sourceTokenDecimals,
 		destTokenAddress)
 
 	if err != nil {
@@ -73,8 +76,9 @@ func TokenToTokenCalc(
 	fmt.Println("Expected Rate: ", rate.ExpectedRate)
 
 	sourceAmount := decimal.NewFromFloat(sourceTokenAmount)
+	//sourceAmount := utils.ToWei(sourceTokenAmount, int(sourceTokenDecimals))
 	// use slippage rate for now
-	slipRate := utils.ToDecimal(rate.SlippageRate, int(destTokenDecimal))
+	slipRate := utils.ToDecimal(rate.SlippageRate, 18)
 	fmt.Println("Slippage: ", slipRate)
 
 	tokens, _ := sourceAmount.Mul(slipRate).Float64()

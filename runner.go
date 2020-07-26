@@ -1,11 +1,19 @@
 package main
 
 import (
+	"context"
+	"crypto/ecdsa"
 	"fmt"
 	walletClient "github.com/ebadiere/wallet/client"
+	_ "github.com/ebadiere/wallet/contracts/arbitrage"
 	"github.com/ebadiere/wallet/kyber"
 	uni1 "github.com/ebadiere/wallet/uniswapone"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/joho/godotenv"
 	"log"
+	"math/big"
+	"os"
 )
 
 type ERC20 struct {
@@ -87,9 +95,58 @@ func main() {
 			client,
 			k,
 			uni1TokenAmount,
-			daiAddr,
-			tokenDecimals)
+			tokenDecimals,
+			daiAddr)
 		fmt.Println("DAI Amount back: ", kyberTokenAmount)
+
+		if kyberTokenAmount > 10000 {
+			fmt.Println("ARBITRAGE!!!!!!!")
+			err := godotenv.Load()
+			if err != nil {
+				log.Fatal("Error loading .env file")
+			}
+
+			privateKey, err := crypto.HexToECDSA(os.Getenv("privateKey"))
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			publicKey := privateKey.Public()
+			publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
+			if !ok {
+				log.Fatal("error casting public key to ECDSA")
+			}
+
+			fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
+			nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			gasPrice, err := client.SuggestGasPrice(context.Background())
+			if err != nil {
+				log.Fatal(err)
+			}
+			auth := bind.NewKeyedTransactor(privateKey)
+			auth.Nonce = big.NewInt(int64(nonce))
+			auth.Value = big.NewInt(0)     // in wei
+			auth.GasLimit = uint64(800000) // in units
+			auth.GasPrice = gasPrice
+
+			//address := common.HexToAddress("0x1da69abFa9F4e6cf51B14c8794921F34bB90D03f")
+			//arbi, err := arbitrage.NewArbitrage(address, client)
+			//if err != nil {
+			//	log.Fatal(err)
+			//}
+
+			//baseIn := big.NewFloat(10000000000000000000000)
+			//decIn := utils.ToDecimal(baseIn, 18)
+			//transaction, err := arbi.MakeArbitrage(auth, decimal.New(10000, 18).BigInt(), common.HexToAddress(k))
+			//if err != nil {
+			//	log.Fatal(err)
+			//}
+			//fmt.Println("Transaction: ", transaction.Hash().Hex())
+		}
 	}
 
 }
