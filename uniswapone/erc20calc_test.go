@@ -60,6 +60,15 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 		TakerFee: "0.003",
 	}
 
+	amplAddr := "0xD46bA6D942050d489DBd938a2C909A5d5039A161"
+	ampl := LISTING{
+		Name:     "Ampleforth",
+		Symbol:   "AMPL",
+		Id:       "0x042dBBDc27F75d277C3D99efE327DB21Bc4fde75",
+		MakerFee: "0",
+		TakerFee: "0.003",
+	}
+
 	client, ctx := walletClient.Connect()
 	chainID, _ := client.ChainID(ctx)
 	if chainID == nil {
@@ -103,6 +112,19 @@ func TestCalculateTokenToTokenTrade(t *testing.T) {
 
 	fmt.Println("DAI Amount: 10000")
 	fmt.Println("Can buy", ubt.Symbol, " DAI amount of: ", tokenAmount)
+	fmt.Println("Whoohoo")
+
+	tokenAmount, _ = CalculateTokenToTokenTrade(
+		client,
+		ctx,
+		dai.Id,
+		daiAddr,
+		10000,
+		ampl.Id,
+		amplAddr)
+
+	fmt.Println("DAI Amount: 10000")
+	fmt.Println("Can buy", ampl.Symbol, " DAI amount of: ", tokenAmount)
 	fmt.Println("Whoohoo")
 
 }

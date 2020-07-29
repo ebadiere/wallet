@@ -10,6 +10,7 @@ import (
 	uni1 "github.com/ebadiere/wallet/uniswapone"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/joho/godotenv"
 	"log"
 	"math/big"
@@ -57,6 +58,13 @@ func main() {
 
 	exchanges := uni1.LoadResponse()
 	count := 0
+	for {
+		iterateResponse(exchanges, count, client, ctx, dai, daiAddr)
+	}
+
+}
+
+func iterateResponse(exchanges map[string]uni1.Exchange, count int, client *ethclient.Client, ctx context.Context, dai ERC20, daiAddr string) {
 	for k, v := range exchanges {
 		count++
 		//if v.Name == dai.Name{
@@ -148,5 +156,4 @@ func main() {
 			//fmt.Println("Transaction: ", transaction.Hash().Hex())
 		}
 	}
-
 }

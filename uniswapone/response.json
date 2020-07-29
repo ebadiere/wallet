@@ -1,4 +1,11 @@
 {
+  "0xD46bA6D942050d489DBd938a2C909A5d5039A161": {
+    "name": "Ampleforth",
+    "symbol": "AMPL",
+    "id": "0x042dBBDc27F75d277C3D99efE327DB21Bc4fde75",
+    "maker_fee": "0",
+    "taker_fee": "0.003"
+  },
   "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599": {
     "name": "Wrapped BTC",
     "symbol": "WBTC",
