@@ -14,3 +14,13 @@ Deploy an WEth version of the Uni1KyberArbitraguer, then complete the arbitrage 
 
 implement the ethToToken uniswap swap function in an isolated function easy to test
 
+
+EthLendOracle:
+
+Gas Price:  90000000000
+
+Gas Price:  99000000000
+0x517B5964dB0f8D8Beb40cd6894e0fA9eBEbeeAf0
+0x3cc5c913f0962ba6f46e5b57ac98bfdd11a32f783e51f5b25147da070911f2c5
+
+
